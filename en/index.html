@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Project Forecast</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="Estimate how long it will take to complete your project">
+        <meta name="keywords" content="Planrockr, Software, Project Management, Tool, Estimate, Deadline, Coderockr, iMasters">
+        <link href="http://planrockr.com/assets/images/favicon.png" rel="shortcut icon">
+
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="http://planrockr.com/assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="http://planrockr.com/assets/css/material.min.css" rel="stylesheet">
+        <link href="assets/fonts/stylesheet.css" rel="stylesheet">
+        <link href="assets/css/styles.css" rel="stylesheet">
+
+        <meta property="og:url" content="http://planrockr.com/project-forecast">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Project Forecaster">
+        <meta property="og:image" content="http://planrockr.com/project-forecast/assets/images/tile-en.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:description" content="Estimate how long it will take to complete your project">
+        <meta property="og:site_name" content="Project Forecaster">
+        <meta property="og:locale" content="en_US">
+
+        <!-- start Mixpanel -->
+        <script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" "); for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]); mixpanel.init("96709a517e8bc788b68cd6d4f352289e"); mixpanel.track("Project Forecaster");
+        </script>
+        <!-- end Mixpanel -->
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="lang pull-left">
+                    <!-- <a href="../index.html" title="See in Portuguese">PT</a> <span>|</span> <p>EN</p> -->
+                </div>
+
+                <div class="hero">
+                    <img class="img-responsive" src="assets/images/logo-footer.png" alt="Coderockr">
+                    <span class="clock"></span>
+                </div>
+            </div>
+        </header>
+
+        <section id="content">
+            <article class="dataGettering text-center">
+                <div class="container">
+                    <h1>Estimate how long it will take to complete your project in just two steps!</h1>
+                    <p class="col-md-8 col-md-offset-2">We provide here a method to estimate quickly and easily the number of weeks it will take to finish your project. Try it now!</p>
+
+                    <h2 class="clearfix">How many tasks are remaining to be completed?</h2>
+                    <div class="input-group">
+                        <p>Between</p>
+                        <input type="number" name="MinTasks" min="1" max="1000">
+                        <p>and</p>
+                        <input type="number" name="MaxTasks" min="1" max="1000">
+                        <p class="hidden-xs">tasks</p>
+                    </div>
+
+                    <h2 class="clearfix">How many tasks can the team deliver per week?</h2>
+                    <div class="input-group">
+                        <p>Between</p>
+                        <input type="number" name="MinTasksDone" min="1" max="1000">
+                        <p>and</p>
+                        <input type="number" name="MaxTasksDone" min="1" max="1000">
+                        <p class="hidden-xs">tasks</p>
+                    </div>
+
+                    <button type="button" class="calculate button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                        Estimate
+                    </button>
+                </div>
+            </article>
+
+            <article class="results text-center hidden">
+                <div class="container">
+                    <div class="row">
+                        <h1>Estimates</h1>
+                        <p class="col-md-8 col-md-offset-2">According to your data there is a probability that your project will be completed in
+                        <span class="initial"></span> to <span class="final"></span> weeks.</p>
+
+                        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+                            <div class="probability probably hidden-xs">
+                                <p>Very Likely</p>
+                                <span></span>
+                            </div>
+                            <div class="probability somewhat_probably hidden-xs">
+                                <p>Somewhat Likely</p>
+                                <span></span>
+                            </div>
+                            <div class="probability less_probably hidden-xs">
+                                <p>Unlikely</p>
+                                <span></span>
+                            </div>
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th width="50%">Probability</th>
+                                        <th width="50%">Duration in Weeks</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+
+                            <a href="javascript:window.location.reload();">Recalculate Estimates &nbsp; <i class="fa fa-refresh" aria-hidden="true"></i></a>
+
+                            <h3>How do we estimate?</h3>
+                            <p>According to your estimates the algorithm generates 1000 simulations and uses the 
+                            <strong>Monte Carlo Method</strong> to calculate the probability of project delivery. Want to know more? Check out our article about the <a href="https://medium.com/@planrockr/evidence-based-estimation-for-project-delivery-4c2a69a17084#.mbzda3gzu">Evidence-based Estimation for Project Delivery</a>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="planrockr">
+                    <div class="container">
+                        <div class="row">
+                            <h2 class="col-md-8 col-md-offset-2">Want to see clearly and quickly more information about your projects?</h2>
+                            <a href="http://www.planrockr.com" target="_blank" class="button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                                Meet Planrockr
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+            </article>
+        </section>
+
+        <footer>
+            <div class="container text-center">
+                <p>© 2016 iMasters Planrockr - Plan Like a Rockstar!</p>
+                <a href="http://www.planrockr.com" target="_blank">www.planrockr.com</a>
+                <ul>
+                    <li>
+                        <a class="social-email" href="mailto:eminetto@gmail.com?subject=Contato Planrockr" title="Contact Us">
+                            <i class="fa fa-at" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="social-facebook" target="_blank" href="https://www.facebook.com/planrockr" title="Follow Planrockr on Facebook">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="social-twitter" target="_blank" href="https://twitter.com/planrockr" title="Follow Planrockr on Twitter">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="social-youtube" target="_blank" href="https://www.youtube.com/channel/UCFtwGHZlooYbOqaCqKMs2Bg" title="Whatch the Planrockr on YouTube">
+                            <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="http://planrockr.com/assets/js/jquery.min.js"><\/script>')</script>
+        <script src="http://planrockr.com/assets/js/bootstrap.min.js"></script>
+        <script src="http://planrockr.com/assets/js/material.min.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
